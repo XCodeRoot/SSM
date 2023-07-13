@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+        bean 标签 : 配置一个bean对象,交给ioc容器管理
+        属性:
+            id:bean对象的唯一标识
+            class:bean对象的类型 ,写全类名
+    -->
+    <bean id="helloworld" class="com.atguigu.spring.pojo.HelloWorld"></bean>
+</beans>

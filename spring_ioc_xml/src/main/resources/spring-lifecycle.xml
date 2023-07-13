@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!-- 需要指定 初始化方法 和 销毁方法 ,才会进行初始化和销毁的操作   -->
+    <bean id="user"  class="com.atguigu.spring.pojo.User" init-method="initMethod" destroy-method="destroyMethod">
+        <property name="id" value="1"></property>
+        <property name="username" value="admin"></property>
+        <property name="password" value="123456"></property>
+        <property name="age" value="23"></property>
+    </bean>
+    <!-- 这个后置处理器,针对该ioc容器里的所有bean对象 初始化时 均会执行   -->
+    <bean id="myBeanPostProcessor" class="com.atguigu.spring.process.MyBeanPostProcessor"></bean>
+</beans>
