@@ -1,0 +1,4 @@
+# Project exclude paths
+/spring_helloworld/target/
+/spring_ioc_annotation/target/
+/spring_ioc_xml/target/
