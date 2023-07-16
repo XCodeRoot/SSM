@@ -4,12 +4,14 @@ import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.Signature;
 import org.aspectj.lang.annotation.*;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 
 @Component
 @Aspect //将当前组件 标识为一个 切面
+@Order(1)//将当前切面优先级 设置为最高
 public class LoggerAspect {
 
     @Pointcut("execution(* com.atguigu.spring.aop.annotation.CalculatorImpl.*(..))")
