@@ -9,10 +9,13 @@
         <module name="spring_helloworld" />
         <module name="spring-proxy" />
         <module name="spring-transaction" />
+        <module name="spring_mvc_demo" />
         <module name="mybatis_helloworld" />
         <module name="spring-aop" />
+        <module name="spring_mvc_helloworld" />
         <module name="spring_ioc_xml" />
         <module name="spring_ioc_annotation" />
+        <module name="spring_mvc_rest" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -23,6 +26,9 @@
       <module name="spring_helloworld" target="1.8" />
       <module name="spring_ioc_annotation" target="1.8" />
       <module name="spring_ioc_xml" target="1.8" />
+      <module name="spring_mvc_demo" target="1.8" />
+      <module name="spring_mvc_helloworld" target="1.8" />
+      <module name="spring_mvc_rest" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

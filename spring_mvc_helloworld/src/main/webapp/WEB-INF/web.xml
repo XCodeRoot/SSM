@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <!-- 配置SpringMVC的前端控制器DispatcherServlet -->
+    <!--
+        SpringMVC默认配置文件的位置和名称
+            位置:WEB-INF 下
+            名字: <servlet-name>标签里的名字-servlet.xml   当前配置下 配置文件名为 SpringMVC-servlet.xml
+
+     -->
+    <servlet>
+        <servlet-name>SpringMVC</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <!-- 设置SpringMVC配置文件 的路径和名称 -->
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:springmvc.xml</param-value>
+        </init-param>
+        <!-- 在服务器启动时 就马上初始化 DispatcherServlet -->
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SpringMVC</servlet-name>
+        <!--
+            url 为 / 表示 接收所有路径为 非 .jsp 结尾的请求和响应 ,因为tomcat的xml文件里 ,有专门接收.jsp的请求和响应的 JspServlet
+                因为DispatcherServlet封装的是Servlet而不是tomcat,DispatcherServlet不能接收.jsp的请求和响应
+            url 为 /* 表示 接收所有类型的 请求和响应
+         -->
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+
+</web-app>
