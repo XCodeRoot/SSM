@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- mapper的命名空间 要和Mapper接口的 全类名保持一致 -->
+<mapper namespace="com.atguigu.mybatis.mapper.SpecialSqlMapper">
+    <!-- List<User> getUserByLike(); -->
+    <select id="getUserByLike" resultType="User">
+        select id, username,password,age,gender,email from t_user where username like "%"#{mohu}"%"
+    </select>
+
+    <!-- void deleteMoreUser(@Param("ids") String ids); -->
+    <delete id="deleteMoreUser">
+        delete from t_user where id in (${ids})
+    </delete>
+
+    <!-- List<User> getUserList(@Param("tableName") String tableName); -->
+    <select id="getUserList" resultType="User">
+        select id, username,password,age,gender,email from ${tableName}
+    </select>
+
+    <!-- void insertUser(User user); -->
+    <!--
+        useGeneratedKeys="true" 表示当前insert语句 使用自增的主键
+        keyProperty="id" 将添加的数据的自增主键 , 赋值给实体类类型的参数的属性,这个属性就是 id ,类似于回传 主键值的功能
+     -->
+    <insert id="insertUser" useGeneratedKeys="true" keyProperty="id">
+        insert into t_user(id, username,password,age,gender,email)values(null,#{username},#{password},#{age},#{gender},#{email})
+    </insert>
+</mapper>

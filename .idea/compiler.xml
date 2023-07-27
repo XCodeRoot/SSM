@@ -8,19 +8,23 @@
         <outputRelativeToContentRoot value="true" />
         <module name="spring_helloworld" />
         <module name="spring-proxy" />
-        <module name="spring-transaction" />
         <module name="spring_mvc_demo" />
         <module name="mybatis_helloworld" />
-        <module name="spring-aop" />
         <module name="spring_mvc_ajax" />
         <module name="spring_mvc_helloworld" />
+        <module name="spring_mvc_annotation" />
+        <module name="spring_mvc_rest" />
+        <module name="spring-transaction" />
+        <module name="spring_mvc_extension" />
+        <module name="mybatis_parameter" />
+        <module name="spring-aop" />
         <module name="spring_ioc_xml" />
         <module name="spring_ioc_annotation" />
-        <module name="spring_mvc_rest" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="mybatis_helloworld" target="1.8" />
+      <module name="mybatis_parameter" target="1.8" />
       <module name="spring-aop" target="1.8" />
       <module name="spring-proxy" target="1.8" />
       <module name="spring-transaction" target="1.8" />
@@ -28,7 +32,9 @@
       <module name="spring_ioc_annotation" target="1.8" />
       <module name="spring_ioc_xml" target="1.8" />
       <module name="spring_mvc_ajax" target="1.8" />
+      <module name="spring_mvc_annotation" target="1.8" />
       <module name="spring_mvc_demo" target="1.8" />
+      <module name="spring_mvc_extension" target="1.8" />
       <module name="spring_mvc_helloworld" target="1.8" />
       <module name="spring_mvc_rest" target="1.8" />
     </bytecodeTargetLevel>

@@ -15,6 +15,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.UUID;
 
 @Controller
 public class FileUpAndDownController {
@@ -61,7 +62,15 @@ public class FileUpAndDownController {
     public String testUp(MultipartFile photo, HttpSession session) throws IOException {
         //MultipartFile 形参来接收 上传的文件,形参名要和文件名对应 ,
         //SpringMVC配置文件解析器,才能将上传的file转换为MultipartFile类型
-        String filename = photo.getOriginalFilename();//获取文件名
+        String fileName = photo.getOriginalFilename();//获取文件名
+
+        //获取上传文件的后缀名
+        String hzName = fileName.substring(fileName.lastIndexOf("."));
+        //获取 uuid
+        String uuid= UUID.randomUUID().toString();
+        //拼接一个新的文件名
+        fileName=uuid+hzName;
+
         //获取ServletContext对象
         ServletContext servletContext = session.getServletContext();
         //获取当前工程的真实路径
@@ -72,7 +81,7 @@ public class FileUpAndDownController {
         if (!file.exists()) {
             file.mkdir();
         }
-        String finalPath = photoPath + File.separator + filename;//完整上传文件的路径
+        String finalPath = photoPath + File.separator + fileName;//完整上传文件的路径
         //上传文件
         photo.transferTo(new File(finalPath)); //上传后的文件 ,最终可以在target目录下找到 photo目录里的文件
         return "success";
