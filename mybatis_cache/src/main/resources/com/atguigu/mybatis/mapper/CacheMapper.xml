@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- mapper的命名空间 要和Mapper接口的 全类名保持一致 -->
+<mapper namespace="com.atguigu.mybatis.mapper.CacheMapper">
+
+    <cache></cache>
+
+    <!-- Emp getEmpById(@Param("empId") Integer empId); -->
+    <select id="getEmpById" resultType="emp">
+        select emp_id,emp_name,age,gender,dept_id from t_emp where emp_id=#{empId}
+    </select>
+</mapper>

@@ -3,8 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/SSM.iml" filepath="$PROJECT_DIR$/SSM.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis_cache/mybatis_cache.iml" filepath="$PROJECT_DIR$/mybatis_cache/mybatis_cache.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis_dynamicSQL/mybatis_dynamicSQL.iml" filepath="$PROJECT_DIR$/mybatis_dynamicSQL/mybatis_dynamicSQL.iml" />
       <module fileurl="file://$PROJECT_DIR$/mybatis_helloworld/mybatis_helloworld.iml" filepath="$PROJECT_DIR$/mybatis_helloworld/mybatis_helloworld.iml" />
       <module fileurl="file://$PROJECT_DIR$/mybatis_parameter/mybatis_parameter.iml" filepath="$PROJECT_DIR$/mybatis_parameter/mybatis_parameter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis_resultMap/mybatis_resultMap.iml" filepath="$PROJECT_DIR$/mybatis_resultMap/mybatis_resultMap.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-aop/spring-aop.iml" filepath="$PROJECT_DIR$/spring-aop/spring-aop.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-proxy/spring-proxy.iml" filepath="$PROJECT_DIR$/spring-proxy/spring-proxy.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-transaction/spring-transaction.iml" filepath="$PROJECT_DIR$/spring-transaction/spring-transaction.iml" />

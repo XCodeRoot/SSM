@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- mapper的命名空间 要和Mapper接口的 全类名保持一致 -->
+<mapper namespace="com.atguigu.mybatis.mapper.DeptMapper">
+
+    <!-- Dept getEmpAndDeptByStepTwo(@Param("dept_id")Integer dept_id); -->
+    <select id="getEmpAndDeptByStepTwo" resultType="Dept">
+        select dept_id,dept_name from t_dept where dept_id=#{deptId}
+    </select>
+
+    <resultMap id="deptAndEmpResultMap" type="Dept">
+        <id column="dept_id" property="deptId"></id>
+        <result column="dept_name" property="deptName"></result>
+
+        <!-- ofType 设置集合里存放的 类型 -->
+        <collection property="emps" ofType="Emp">
+            <id column="emp_id" property="empId"></id>
+            <result column="emp_name" property="empName"></result>
+            <result column="age" property="age"></result>
+            <result column="gender" property="gender"></result>
+        </collection>
+    </resultMap>
+    
+    <!-- Dept getDeptAndEmpByDeptId(@Param("deptId")Integer deptId); -->
+    <select id="getDeptAndEmpByDeptId" resultMap="deptAndEmpResultMap">
+        select t_dept.dept_id , t_dept.dept_name , t_emp.emp_id,t_emp.emp_name,t_emp.age,t_emp.gender,t_emp.dept_Id
+        from t_dept
+        left join t_emp
+        on t_dept.dept_id = t_emp.dept_id
+        where t_dept.dept_id = #{deptId}
+    </select>
+
+
+    <resultMap id="deptAndEmpResultMapByStep" type="Dept">
+        <id column="dept_id" property="deptId"></id>
+        <result column="dept_name" property="deptName"></result>
+
+        <!--
+            property : 用来表明 , 你现在的第二步sql 查询的结果 ,要注入给 哪个属性 ,
+                       这个属性是 第一步sql所对应的实体类里的属性,而表里是没有这个字段的
+            select : 唯一标识 , 确定 你的第二步sql 对应Mapper接口方法 的全类名
+            column : 确定你的第一步 sql 查询结果的 哪个字段 要 注入到 第二步sql的 占位符中
+            fetchType:  "eager"标注你的这个第二步sql 为 立即执行,不延迟加载 , "lazy" 标注为 延迟加载
+         -->
+        <collection property="emps" fetchType="eager"
+                    select="com.atguigu.mybatis.mapper.EmpMapper.getDeptAndEmpByStepTwo"
+                    column="dept_id"></collection>
+
+    </resultMap>
+
+    <!-- Dept getDeptAndEmpByStepOne(@Param("deptId")Integer deptId); -->
+    <select id="getDeptAndEmpByStepOne" resultMap="deptAndEmpResultMapByStep">
+        select dept_id,dept_name from t_dept where dept_id=#{deptId}
+    </select>
+</mapper>
