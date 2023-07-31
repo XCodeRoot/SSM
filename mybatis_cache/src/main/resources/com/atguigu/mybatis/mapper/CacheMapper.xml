@@ -6,7 +6,7 @@
 <!-- mapper的命名空间 要和Mapper接口的 全类名保持一致 -->
 <mapper namespace="com.atguigu.mybatis.mapper.CacheMapper">
 
-    <cache></cache>
+    <cache type="org.mybatis.caches.ehcache.EhcacheCache"></cache>
 
     <!-- Emp getEmpById(@Param("empId") Integer empId); -->
     <select id="getEmpById" resultType="emp">

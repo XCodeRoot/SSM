@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/spring_listener" />
     <file type="web" url="file://$PROJECT_DIR$/spring_mvc_ajax" />
     <file type="web" url="file://$PROJECT_DIR$/spring_mvc_annotation" />
     <file type="web" url="file://$PROJECT_DIR$/spring_mvc_demo" />
     <file type="web" url="file://$PROJECT_DIR$/spring_mvc_extension" />
     <file type="web" url="file://$PROJECT_DIR$/spring_mvc_helloworld" />
     <file type="web" url="file://$PROJECT_DIR$/spring_mvc_rest" />
+    <file type="web" url="file://$PROJECT_DIR$/ssm" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
@@ -29,6 +31,9 @@
         <option value="$PROJECT_DIR$/mybatis_resultMap/mybatis_dynamicSQL/pom.xml" />
         <option value="$PROJECT_DIR$/mybatis_dynamicSQL/pom.xml" />
         <option value="$PROJECT_DIR$/mybatis_cache/pom.xml" />
+        <option value="$PROJECT_DIR$/mybatis_mbg/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_listener/pom.xml" />
+        <option value="$PROJECT_DIR$/ssm/pom.xml" />
       </list>
     </option>
   </component>
